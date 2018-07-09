@@ -1,79 +1,68 @@
 <template>
-  <div class="VueToNuxtLogo">
-    <div class="Triangle Triangle--two"/>
-    <div class="Triangle Triangle--one"/>
-    <div class="Triangle Triangle--three"/>
-    <div class="Triangle Triangle--four"/>
+  <div class="logo">
+    <!--<div class="Triangle Triangle&#45;&#45;two"/>-->
+    <!--<div class="Triangle Triangle&#45;&#45;one"/>-->
+    <!--<div class="Triangle Triangle&#45;&#45;three"/>-->
+    <!--<div class="Triangle Triangle&#45;&#45;four"/>-->
+    <img src="@/static/logo.svg">
   </div>
 </template>
 
 <style>
-.VueToNuxtLogo {
-  display: inline-block;
-  animation: turn 2s linear forwards 1s;
-  transform: rotateX(180deg);
-  position: relative;
-  overflow: hidden;
-  height: 180px;
-  width: 245px;
-}
+  img {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 3s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
 
-.Triangle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-}
-
-.Triangle--one {
-  border-left: 105px solid transparent;
-  border-right: 105px solid transparent;
-  border-bottom: 180px solid #41B883;
-}
-
-.Triangle--two {
-  top: 30px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 87.5px solid transparent;
-  border-right: 87.5px solid transparent;
-  border-bottom: 150px solid #3B8070;
-}
-
-.Triangle--three {
-  top: 60px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 120px solid #35495E;
-}
-
-.Triangle--four {
-  top: 120px;
-  left: 70px;
-  animation: godown 0.5s linear forwards 3s;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 60px solid #fff;
-}
-
-@keyframes turn {
-  100% {
-    transform: rotateX(0deg);
+    opacity: 0.8;
   }
-}
 
-@keyframes godown {
-  100% {
-    top: 180px;
-  }
-}
+  img:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake-strong 0.5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
 
-@keyframes goright {
-  100% {
-    left: 70px;
+    opacity: 1;
   }
-}
+
+
+  @keyframes shake {
+    0% { transform:  translate(0px, 0px) rotate(0deg); }
+    5% { transform:  translate(3px, 6px) rotate(4deg); }
+    10% { transform: translate(7px, 2px) rotate(-1deg); }
+    15% { transform: translate(0px, -3px) rotate(-5deg); }
+    20% { transform: translate(-4px, -8px) rotate(-2deg); }
+    25% { transform: translate(-10px, -2px) rotate(1deg); }
+    30% { transform: translate(-5px, -6px) rotate(3deg); }
+    35% { transform: translate(1px, 1px) rotate(4deg); }
+    40% { transform: translate(3px, -3px) rotate(1deg); }
+    45% { transform: translate(5px, -5px) rotate(0deg); }
+    50% { transform: translate(9px, 3px) rotate(4deg); }
+    55% { transform: translate(4px, 6px) rotate(5deg); }
+    60% { transform: translate(4px, -1px) rotate(2deg); }
+    65% { transform: translate(-1px, -4px) rotate(1deg); }
+    70% { transform: translate(-4px, -6px) rotate(-2deg); }
+    75% { transform: translate(2px, 0px) rotate(3deg); }
+    80% { transform: translate(5px, 3px) rotate(4deg); }
+    85% { transform: translate(9px, 4px) rotate(-1deg); }
+    90% { transform: translate(5px, -1px) rotate(1deg); }
+    95% { transform: translate(-1px, -4px) rotate(-4deg); }
+    100% { transform:translate(-3px, -2px) rotate(1deg); }
+  }
+
+  @keyframes shake-strong {
+    0% { transform: translate(10px, 7px) rotate(6deg); }
+    10% { transform: translate(-9px, -7px) rotate(-2deg); }
+    20% { transform: translate(-13px, 0px) rotate(-9deg); }
+    30% { transform: translate(9px, 6px) rotate(0deg); }
+    40% { transform: translate(8px, -7px) rotate(6deg); }
+    50% { transform: translate(-5px, 9px) rotate(-4deg); }
+    60% { transform: translate(-8px, 8px) rotate(2deg); }
+    70% { transform: translate(4px, 2px) rotate(-5deg); }
+    80% { transform: translate(-5px, -5px) rotate(9deg); }
+    90% { transform: translate(6px, 9px) rotate(-5deg); }
+    100% { transform: translate(8px, -7px) rotate(-1deg); }
+  }
 </style>

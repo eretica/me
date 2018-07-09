@@ -5,36 +5,52 @@
       <h1 class="title">
         me
       </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+      <!--<h2 class="subtitle">-->
+        <!--Nuxt.js project-->
+      <!--</h2>-->
+      <!--<div class="links">-->
+        <!--<a-->
+          <!--href="https://nuxtjs.org/"-->
+          <!--target="_blank"-->
+          <!--class="button&#45;&#45;green">Documentation</a>-->
+        <!--<a-->
+          <!--href="https://github.com/nuxt/nuxt.js"-->
+          <!--target="_blank"-->
+          <!--class="button&#45;&#45;grey">GitHub</a>-->
+      <!--</div>-->
+
+      <!--<img src="@/static/logo.svg">-->
+
+        <box v-for="(data, n) in list" :key="n"
+             :init_id="n"
+             :ini_name="data.title"
+             :ini_top="300 + 10.5 * n"
+             :ini_left="10 + 10.5 * n"
+
+        />
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import AppLogo from '@/components/AppLogo.vue'
+import Box from '@/components/Box.vue'
+
+import { mapMutations } from 'vuex'
 
 export default {
-  components: {
-    AppLogo
-  }
+    components: {
+        AppLogo,
+        Box
+    },
+    computed: {
+        list () { return this.$store.state.list }
+    },
 }
 </script>
 
 <style>
 .container {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,4 +77,5 @@ export default {
 .links {
   padding-top: 15px;
 }
+
 </style>
