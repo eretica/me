@@ -4,15 +4,15 @@
       <app-logo/>
 
       <div class="contents" ref="contens" id="contents">
-        <div id="account-1">
-          <account @dragging="insertBefore('account-1')" class="js-content"></account>
+        <div id="account-1" class="js-content">
+          <account @dragging="to_top('account-1')"></account>
         </div>
-        <div id="account-2">
-          <account @dragging="insertBefore('account-2')" class="js-content"></account>
+        <div id="account-2" class="js-content">
+          <account @dragging="to_top('account-2')"></account>
         </div>
 
-        <div id="account-3">
-          <account @dragging="insertBefore('account-3')" class="js-content"></account>
+        <div id="account-3" class="js-content">
+          <account @dragging="to_top('account-3')"></account>
         </div>
       </div>
 
@@ -35,8 +35,11 @@ export default {
         list () { return this.$store.state.list },
     },
     methods: {
-        insertBefore(aa) {
-            document.getElementById("contents").parentNode.insertBefore(document.getElementById(aa), document.getElementById("contents"));
+        to_top(id) {
+            var last =  document.querySelector(".js-content:last-child");
+            var elm = document.getElementById(id);
+
+            last.after(elm);
         },
     }
 }
