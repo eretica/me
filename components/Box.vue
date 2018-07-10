@@ -1,59 +1,44 @@
 <template>
         <no-ssr>
-            <VueDragResize :isActive="true" :w="width" :h="height" v-on:resizing="resize" v-on:dragging="resize" :sticks="['tm', 'mr', 'bm', 'ml', 'tl', 'tr', 'br', 'bl']">
-
-                <!--<div id="mydivheader">-->
-                    <div class="window">
-                        <div class="titlebar">
-                            <div class="buttons">
-                                <div class="close">
-                                    <a class="closebutton" href="#" @click="delete_emit"><span><strong>x</strong></span></a>
-                                    <a class="closebutton" href="#"><span><strong>x</strong></span></a>
-                                    <!-- close button link -->
-                                </div>
-                                <div class="minimize">
-                                    <a class="minimizebutton" href="#"><span><strong>&ndash;</strong></span></a>
-                                    <!-- minimize button link -->
-                                </div>
-                                <div class="zoom">
-                                    <a class="zoombutton" href="#"><span><strong>+</strong></span></a>
-                                    <!-- zoom button link -->
-                                </div>
+            <vue-draggable-resizable  @dragging="onDragging" :isActive="true" :minw="200" :minh="300"  :w="width" :h="height" v-on:resizing="resize" v-on:dragging="resize" :parent="true" :sticks="['tm', 'mr', 'bm', 'ml', 'tl', 'tr', 'br', 'bl']">
+                <div class="window">
+                    <div class="titlebar" style="position: relative">
+                        <div class="buttons" style="position: absolute;">
+                            <div class="close">
+                                <a class="closebutton" href="#" @click="delete_emit"><span><strong>x</strong></span></a>
                             </div>
-                            CSS OS X Yosemite Window
-                            <!-- window title -->
+                            <div class="minimize">
+                                <a class="minimizebutton" href="#"><span><strong>&ndash;</strong></span></a>
+                            </div>
+                            <div class="zoom">
+                                <a class="zoombutton" href="#"><span><strong>+</strong></span></a>
+                            </div>
                         </div>
-                        <div class="content">
-                            <h3>Hey! What's up?</h3>
-                            I'm a simple OS X Yosemite style window.
-                            <!-- window content -->
+                        <div style="text-align: center;" >
+                            <slot name="header"></slot>
                         </div>
                     </div>
-                <!--</div>-->
-            </VueDragResize>
+                    <div class="content">
+                        <slot name="content"></slot>
+                    </div>
+                </div>
+            </vue-draggable-resizable>
         </no-ssr>
 </template>
 
 <script>
-    // import VueDragResize from 'vue-drag-resize';
-
     export default {
         name: 'Box_mac',
         props: {
             'init_id': {type: Number},
-            'ini_name': {type: String},
             'ini_top': {type: Number},
             'ini_left': {type: Number}
         },
         data () {
             return {
                 id: this.init_id,
-                name: this.ini_name,
-                // offsetX: 0,
-                // offsetY: 0,
-                // top: this.ini_top,
-                // left: this.ini_left,
-                // dragg: false
+                head: this.ini_head,
+                content: this.ini_content,
                 width: 400,
                 height: 400,
                 top: this.ini_top,
@@ -61,12 +46,9 @@
             }
         },
         components: {
-            'VueDragResize': () => import('vue-drag-resize')
+            'VueDraggableResizable': () => import('vue-drag-resize')
         },
         created: function () {
-            if (process.browser) {
-                // window.addEventListener('mousemove', this.elementDrag);
-            }
         },
         methods: {
             resize(newRect) {
@@ -78,6 +60,10 @@
             delete_emit: function () {
                 this.$emit('delete', this.id);
             },
+            onDragging() {
+                // todo this bad
+                this.$parent.$emit('dragging');
+            }
         }
     }
 </script>
@@ -95,6 +81,10 @@
     .vdr-stick-tm, .vdr-stick-bm {
         left: 0!important;
         width: 100% !important;
+    }
+
+    .vdr.active:before {
+        content: none!important;
     }
 </style>
 

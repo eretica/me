@@ -16,26 +16,32 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  background-color: azure;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
 }
 
-.button--green {
+.button--qiita {
   display: inline-block;
   border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
+  border: 1px solid #55c500;
+  color: #55c500;
   text-decoration: none;
   padding: 10px 30px;
+  margin-left: 15px;
+  margin-top: 5px;
 }
 
-.button--green:hover {
+.button--qiita:hover {
   color: #fff;
-  background-color: #3b8070;
+  background-color: #55c500;
 }
 
-.button--grey {
+.button--github{
   display: inline-block;
   border-radius: 4px;
   border: 1px solid #35495e;
@@ -43,10 +49,42 @@ html {
   text-decoration: none;
   padding: 10px 30px;
   margin-left: 15px;
+  margin-top: 5px;
 }
 
-.button--grey:hover {
+.button--github:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.button--twitter {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #55acee;
+  color: #55acee;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-top: 5px;
+}
+
+.button--twitter:hover {
+  color: #fff;
+  background-color: #55acee;
+}
+
+.button--facebook {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #3B5998;
+  color: #3B5998;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.button--facebook:hover {
+  color: #fff;
+  background-color: #3B5998;
 }
 </style>

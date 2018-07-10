@@ -3,8 +3,16 @@ import Vuex from 'vuex'
 const store = () => new Vuex.Store({
     state: {
         list: [
-            {'text': 'aaa', 'show': true},
-            {'text': 'bbb', 'show': true}
+            {
+                'head': 'Accounts',
+                'content': '',
+                'show': true
+            },
+            {
+                'head': 'bbb',
+                'content': '<button>aaaa</button>',
+                'show': true
+            }
         ]
     },
     mutations: {

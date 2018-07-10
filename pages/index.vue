@@ -2,50 +2,43 @@
   <section class="container">
     <div>
       <app-logo/>
-      <h1 class="title">
-        me
-      </h1>
-      <!--<h2 class="subtitle">-->
-        <!--Nuxt.js project-->
-      <!--</h2>-->
-      <!--<div class="links">-->
-        <!--<a-->
-          <!--href="https://nuxtjs.org/"-->
-          <!--target="_blank"-->
-          <!--class="button&#45;&#45;green">Documentation</a>-->
-        <!--<a-->
-          <!--href="https://github.com/nuxt/nuxt.js"-->
-          <!--target="_blank"-->
-          <!--class="button&#45;&#45;grey">GitHub</a>-->
-      <!--</div>-->
 
-      <!--<img src="@/static/logo.svg">-->
+      <div class="contents" ref="contens" id="contents">
+        <div id="account-1">
+          <account @dragging="insertBefore('account-1')" class="js-content"></account>
+        </div>
+        <div id="account-2">
+          <account @dragging="insertBefore('account-2')" class="js-content"></account>
+        </div>
 
-        <box v-for="(data, n) in list" :key="n"
-             :init_id="n"
-             :ini_name="data.title"
-             :ini_top="300 + 10.5 * n"
-             :ini_left="10 + 10.5 * n"
+        <div id="account-3">
+          <account @dragging="insertBefore('account-3')" class="js-content"></account>
+        </div>
+      </div>
 
-        />
     </div>
   </section>
 </template>
 
 <script>
 import AppLogo from '@/components/AppLogo.vue'
-import Box from '@/components/Box.vue'
+import Account from '@/components/Account.vue'
 
 import { mapMutations } from 'vuex'
 
 export default {
     components: {
         AppLogo,
-        Box
+        Account
     },
     computed: {
-        list () { return this.$store.state.list }
+        list () { return this.$store.state.list },
     },
+    methods: {
+        insertBefore(aa) {
+            document.getElementById("contents").parentNode.insertBefore(document.getElementById(aa), document.getElementById("contents"));
+        },
+    }
 }
 </script>
 
