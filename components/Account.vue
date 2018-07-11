@@ -3,21 +3,18 @@
         <box :ini_top="300 + 10.5" :ini_left="10 + 10.5">
             <div slot="header">アカウント</div>
             <div slot="content">
-                <h1>
-                    フリーのペチパー
-                </h1>
                 <div class="links">
                     <a href="https://twitter.com/dona_sunday" target="_blank" class="button--twitter">
-                        Twitter
+                        <span><i class="fa fa-twitter fa-lg"></i></span> Twitter
                     </a>
                     <a href="https://github.com/eretica/" target="_blank" class="button--github">
-                        GitHub
+                        <span><i class="fa fa-github fa-lg"></i></span> GitHub
                     </a>
                     <a href="https://qiita.com/eretica" target="_blank" class="button--qiita">
-                        Qiita
+                        <span><i class="fa fa-search fa-lg"></i></span> Qiita
                     </a>
                     <a href="https://ja-jp.facebook.com/manaimasahiro" target="_blank" class="button--facebook">
-                        FaceBook
+                        <span><i class="fa fa-facebook fa-lg"></i></span> FaceBook
                     </a>
                 </div>
             </div>

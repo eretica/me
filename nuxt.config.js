@@ -16,6 +16,12 @@ module.exports = {
 
   plugins: [
   ],
+
+
+  modules: [
+    '@nuxtjs/font-awesome',
+  ],
+
   /*
   ** Customize the progress bar color
   */

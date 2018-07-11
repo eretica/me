@@ -1,6 +1,6 @@
 <template>
         <no-ssr>
-            <vue-draggable-resizable  @dragging="onDragging" :isActive="true" :minw="200" :minh="300"  :w="width" :h="height" v-on:resizing="resize" v-on:dragging="resize" :parent="true" :sticks="['tm', 'mr', 'bm', 'ml', 'tl', 'tr', 'br', 'bl']">
+            <vue-draggable-resizable @dragging="onDragging" :isActive="true" :minw="200" :minh="300"  :w="width" :h="height" v-on:resizing="resize" v-on:dragging="resize" :sticks="['tm', 'mr', 'bm', 'ml', 'tl', 'tr', 'br', 'bl']">
                 <div class="window">
                     <div class="titlebar" style="position: relative">
                         <div class="buttons" style="position: absolute;">
@@ -18,7 +18,7 @@
                             <slot name="header"></slot>
                         </div>
                     </div>
-                    <div class="content">
+                    <div @mousedown.stop='' class="content">
                         <slot name="content"></slot>
                     </div>
                 </div>
@@ -240,6 +240,7 @@
 
     .content {
         padding: 10px;
+        height: 100%;
     }
 
     /* window END */
