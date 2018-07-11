@@ -8,12 +8,12 @@
           <account @dragging="to_top('account-1')"></account>
         </div>
 
-        <div id="account-2" class="js-content">
-          <information @dragging="to_top('account-2')"></information>
-        </div>
-
         <div id="account-3" class="js-content">
           <skill @dragging="to_top('account-3')"></skill>
+        </div>
+
+        <div id="account-2" class="js-content">
+          <information @dragging="to_top('account-2')"></information>
         </div>
       </div>
 

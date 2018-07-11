@@ -1,6 +1,6 @@
 <template>
     <div>
-        <box :ini_top="250" :ini_left="20" :ini_h="300" :ini_y="200" :ini_x="0">
+        <box :ini_top="250" :ini_left="20" :ini_h="300" :ini_y="200" :ini_x="100">
             <div slot="header">インフォメーション</div>
             <div slot="content">
                 <div class="インフォメーション">

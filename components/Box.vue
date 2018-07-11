@@ -18,7 +18,7 @@
                             <slot name="header"></slot>
                         </div>
                     </div>
-                    <div @mousedown.stop='' class="content">
+                    <div @mousedown.stop='' @touchstart.stop="" class="content">
                         <slot name="content"></slot>
                     </div>
                 </div>
