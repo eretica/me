@@ -1,17 +1,17 @@
 <template>
         <no-ssr>
-            <vue-draggable-resizable @dragging="onDragging" :isActive="true" :minw="200" :minh="300"  :w="width" :h="height" v-on:resizing="resize" v-on:dragging="resize" :sticks="['tm', 'mr', 'bm', 'ml', 'tl', 'tr', 'br', 'bl']">
+            <vue-draggable-resizable @dragging="onDragging" :isActive="true" :minw="200" :minh="300" :y="y" :x="x" :w="width" :h="height" v-on:resizing="resize" v-on:dragging="resize" :sticks="['tm', 'mr', 'bm', 'ml', 'tl', 'tr', 'br', 'bl']">
                 <div class="window">
                     <div class="titlebar" style="position: relative">
                         <div class="buttons" style="position: absolute;">
                             <div class="close">
-                                <a class="closebutton" href="#" @click="delete_emit"><span><strong>x</strong></span></a>
+                                <a class="closebutton" href="#" @click.capture="click_red"><span><strong>x</strong></span></a>
                             </div>
                             <div class="minimize">
-                                <a class="minimizebutton" href="#"><span><strong>&ndash;</strong></span></a>
+                                <a class="minimizebutton" v-on:click.capture="click_yeloww" href="#"><span><strong>&ndash;</strong></span></a>
                             </div>
                             <div class="zoom">
-                                <a class="zoombutton" href="#"><span><strong>+</strong></span></a>
+                                <a class="zoombutton" @click.capture="click_green" href="#"><span><strong>+</strong></span></a>
                             </div>
                         </div>
                         <div style="text-align: center;" >
@@ -32,7 +32,10 @@
         props: {
             'init_id': {type: Number},
             'ini_top': {type: Number},
-            'ini_left': {type: Number}
+            'ini_left': {type: Number},
+            'ini_h': {type: Number},
+            'ini_y': {type: Number},
+            'ini_x': {type: Number}
         },
         data () {
             return {
@@ -40,8 +43,10 @@
                 head: this.ini_head,
                 content: this.ini_content,
                 width: 400,
-                height: 400,
+                height: this.ini_h,
                 top: this.ini_top,
+                y: this.ini_y,
+                x: this.ini_x,
                 left: this.ini_left
             }
         },
@@ -49,6 +54,7 @@
             'VueDraggableResizable': () => import('vue-drag-resize')
         },
         created: function () {
+            // this.resize({width:200, height:300, top:700, let:300});
         },
         methods: {
             resize(newRect) {
@@ -63,7 +69,16 @@
             onDragging() {
                 // todo this bad
                 this.$parent.$emit('dragging');
-            }
+            },
+            click_red: () => {
+                console.log('click red');
+            },
+            click_yeloww() {
+                console.log('click yeloww');
+            },
+            click_green: () => {
+                console.log('click green');
+            },
         }
     }
 </script>
@@ -111,7 +126,8 @@
     }
 
     .window {
-        background: #fff;
+        /*background: #fff;*/
+        background: rgb(37, 40, 37);
         /*width: 30vw;*/
         /*height: 40vh;*/
         width: auto;
@@ -120,7 +136,7 @@
         /*margin-top: 12.5vh;*/
         border: 1px solid #acacac;
         border-radius: 6px;
-        box-shadow: 0px 0px 20px #acacac;
+        /*box-shadow: 0px 0px 20px #acacac;*/
     }
 
     .titlebar {
@@ -239,8 +255,8 @@
     }
 
     .content {
-        padding: 10px;
         height: 100%;
+        overflow-y: auto;
     }
 
     /* window END */

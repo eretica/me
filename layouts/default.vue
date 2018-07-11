@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background-color: azure;
+  background-color: #0442428a;
 }
 
 *, *:before, *:after {
@@ -44,8 +44,10 @@ body {
 .button--github{
   display: inline-block;
   border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
+  /*border: 1px solid #35495e;*/
+  border: 1px solid #fff;
+  /*color: #35495e;*/
+  color: #fff;
   text-decoration: none;
   padding: 10px 30px;
   margin-left: 15px;
@@ -55,6 +57,7 @@ body {
 .button--github:hover {
   color: #fff;
   background-color: #35495e;
+  /*background-color: #fff;*/
 }
 
 .button--twitter {
@@ -86,5 +89,21 @@ body {
 .button--facebook:hover {
   color: #fff;
   background-color: #3B5998;
+}
+
+hr {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin-top: 20px;
+  height: 0;
+  width: 100%;
+  max-height: 0;
+  font-size: 1px;
+  line-height: 0;
+  clear: both;
+  border: none;
+  border-top: 1px solid #4b92a6;
+  /*border-bottom: 1px solid #ffffff;*/
 }
 </style>

@@ -7,12 +7,13 @@
         <div id="account-1" class="js-content">
           <account @dragging="to_top('account-1')"></account>
         </div>
+
         <div id="account-2" class="js-content">
-          <account @dragging="to_top('account-2')"></account>
+          <information @dragging="to_top('account-2')"></information>
         </div>
 
         <div id="account-3" class="js-content">
-          <account @dragging="to_top('account-3')"></account>
+          <skill @dragging="to_top('account-3')"></skill>
         </div>
       </div>
 
@@ -23,13 +24,17 @@
 <script>
 import AppLogo from '@/components/AppLogo.vue'
 import Account from '@/components/Account.vue'
+import Skill from '@/components/Skill.vue'
+import Information from '@/components/Information.vue'
 
 import { mapMutations } from 'vuex'
 
 export default {
     components: {
         AppLogo,
-        Account
+        Account,
+        Skill,
+        Information
     },
     computed: {
         list () { return this.$store.state.list },

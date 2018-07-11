@@ -1,6 +1,6 @@
 <template>
     <div>
-        <box :ini_top="300 + 10.5" :ini_left="10 + 10.5">
+        <box :ini_top="250" :ini_left="20" :ini_h="150" :ini_y="100" :ini_x="0">
             <div slot="header">アカウント</div>
             <div slot="content">
                 <div class="links">
