@@ -19,6 +19,10 @@
                     <a href="https://ja-jp.facebook.com/manaimasahiro" target="_blank" class="button--facebook">
                         FaceBook
                     </a>
+
+                    <a href="https://ja-jp.facebook.com/manaimasahiro" target="_blank" class="button--facebook">
+                        FaceBook
+                    </a>
                 </div>
             </div>
         </box>
