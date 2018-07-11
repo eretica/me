@@ -4,15 +4,15 @@
       <app-logo/>
 
       <div class="contents" ref="contens" id="contents">
-        <div id="account-1" class="js-content">
+        <div id="account-1" class="js-content" @click="to_top('account-1')">
           <account @dragging="to_top('account-1')"></account>
         </div>
 
-        <div id="account-3" class="js-content">
+        <div id="account-3" class="js-content" @click="to_top('account-3')">
           <skill @dragging="to_top('account-3')"></skill>
         </div>
 
-        <div id="account-2" class="js-content">
+        <div id="account-2" class="js-content" @click="to_top('account-2')">
           <information @dragging="to_top('account-2')"></information>
         </div>
       </div>
