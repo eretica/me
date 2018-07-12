@@ -4,15 +4,18 @@
             <div slot="header">コンタクト</div>
             <div slot="content">
                 <div class="contact">
-                    <form name="contact" netlify>
+                    <form name="contact" method="POST" netlify>
                         <p>
-                            <label>Name <input type="text" name="name" /></label>
+                            <label>Your Name: <input type="text" name="name" /></label>
                         </p>
                         <p>
-                            <label>Email <input type="email" name="email" /></label>
+                            <label>Your Email: <input type="email" name="email" /></label>
                         </p>
                         <p>
-                            <button class="" type="submit">Send</button>
+                            <label>Message: <textarea name="message"></textarea></label>
+                        </p>
+                        <p>
+                            <button type="submit">Send</button>
                         </p>
                     </form>
                 </div>
