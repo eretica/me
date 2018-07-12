@@ -1,6 +1,6 @@
 <template>
     <div>
-        <box :ini_top="250" :ini_left="20" :ini_h="300" :ini_y="300" :ini_x="100">
+        <box :ini_top="250" :ini_left="20" :ini_h="300" :ini_y="300" :ini_x="150">
             <div slot="header">コンタクト</div>
             <div slot="content">
                 <div class="contact">
