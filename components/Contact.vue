@@ -4,6 +4,7 @@
             <div slot="header">コンタクト</div>
             <div slot="content">
                 <div class="contact">
+                <p>動いてないよ！</p>
                     <form name="contact" method="POST" netlify>
                         <p>
                             <label>Your Name: <input type="text" name="name" /></label>
