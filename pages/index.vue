@@ -4,6 +4,10 @@
       <app-logo/>
 
       <div class="contents" ref="contens" id="contents">
+        <div id="account-4" class="js-content" @click="to_top('account-4')">
+          <contact @dragging="to_top('account-4')"></contact >
+        </div>
+
         <div id="account-1" class="js-content" @click="to_top('account-1')">
           <account @dragging="to_top('account-1')"></account>
         </div>
@@ -26,6 +30,7 @@ import AppLogo from '@/components/AppLogo.vue'
 import Account from '@/components/Account.vue'
 import Skill from '@/components/Skill.vue'
 import Information from '@/components/Information.vue'
+import Contact from '@/components/Contact.vue'
 
 import { mapMutations } from 'vuex'
 
@@ -34,7 +39,8 @@ export default {
         AppLogo,
         Account,
         Skill,
-        Information
+        Information,
+        Contact
     },
     computed: {
         list () { return this.$store.state.list },
