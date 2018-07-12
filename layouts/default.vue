@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background-color: #000000;
+  background-color: #4f685a;
 }
 
 *, *:before, *:after {
