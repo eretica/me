@@ -4,7 +4,7 @@
             <div slot="header">アカウント</div>
             <div slot="content">
                 <div class="links">
-                    <a href="https://twitter.com/dona_sunday" target="_blank" class="button--twitter">
+                    <a href="https://twitter.com" target="_blank" class="button--twitter">
                         <span><i class="fa fa-twitter fa-lg"></i></span> Twitter
                     </a>
                     <a href="https://github.com/eretica/" target="_blank" class="button--github">
