@@ -5,7 +5,7 @@
             <div slot="content">
                 <div class="information">
                     <p>フリーランス</p>
-                    <p>眞井 正浩 ({{ age }}歳)</p>
+                    <p>({{ age }}歳)</p>
                     <p>福岡</p>
                     <p>eretica.m@gmail.com</p>
                 </div>
