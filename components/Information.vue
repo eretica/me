@@ -5,7 +5,7 @@
             <div slot="content">
                 <div class="information">
                     <p>フリーランス</p>
-                    <p>28歳</p>
+                    <p>30歳</p>
                     <p>福岡</p>
                     <p>eretica.m@gmail.com</p>
                 </div>
