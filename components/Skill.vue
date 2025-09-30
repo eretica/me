@@ -5,11 +5,13 @@
             <div slot="content">
                 <div class="skills">
                     <div class="skill-kind">Backend Languages</div>
+                    <div class="skill-box">Rails</div>                  
                     <div class="skill-box">PHP</div>
 
                     <hr>
 
                     <div class="skill-kind">Backend Technologies</div>
+                    <div class="skill-box">Laravel</div>                  
                     <div class="skill-box">Symfony</div>
                     <div class="skill-box">CodeIgniter</div>
                     <div class="skill-box">RDB</div>
@@ -17,11 +19,12 @@
                     <hr>
 
                     <div class="skill-kind">Frontend Languages</div>
-                    <div class="skill-box">JS</div>
+                    <div class="skill-box">TypeScript</div>
 
                     <hr>
 
                     <div class="skill-kind">Frontend Technologies</div>
+                    <div class="skill-box">React</div>
                     <div class="skill-box">Backbone</div>
                     <div class="skill-box">Vue</div>
                     <div class="skill-box">CSS3</div>
@@ -31,9 +34,10 @@
                     <hr>
 
                     <div class="skill-kind">Tools</div>
+                    <div class="skill-box">Terraform</div>
                     <div class="skill-box">Git</div>
-                    <div class="skill-box">Vagrant</div>
                     <div class="skill-box">Docker</div>
+                    <div class="skill-box">Vagrant</div>
                 </div>
             </div>
         </box>
